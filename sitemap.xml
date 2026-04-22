@@ -1,170 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ═══════════════════════════════════════════════════════════
-  SITEMAP.XML — NarzędziaBiurowe.pl
-  ═══════════════════════════════════════════════════════════
-  Jak używać:
-  1. Wgraj ten plik do głównego katalogu strony (root)
-       https://narzedziabiurowe.pl/sitemap.xml
-  2. Dodaj każde nowe narzędzie jako kolejny <url>
-  3. Zgłoś sitemap w Google Search Console:
-       Ustawienia → Mapy witryn → Dodaj mapę witryny
-  4. Aktualizuj <lastmod> po każdej znaczącej zmianie
-
-  PRIORYTETY:
-    1.0 = strona główna
-    0.9 = najważniejsze narzędzia
-    0.7 = pozostałe narzędzia
-    0.5 = strony informacyjne
-
-  CHANGEFREQ:
-    daily   = aktualizowana codziennie
-    weekly  = aktualizowana co tydzień
-    monthly = rzadko zmieniana
-  ═══════════════════════════════════════════════════════════
--->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- ─── STRONA GŁÓWNA ─── -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://narzedziabiurowe.pl/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- ─── KATEGORIA: KALKULATORY ─── -->
   <url>
-    <loc>https://narzedziabiurowe.pl/kalkulatory</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/kalkulator-vat</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/kalkulator-vat.html</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://narzedziabiurowe.pl/kalkulator-zus</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/kalkulator-zus.html</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://narzedziabiurowe.pl/kalkulator-urlopu</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/kalkulator-urlopu.html</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://narzedziabiurowe.pl/kalkulator-nadgodzin</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/kalkulator-amortyzacji</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ─── KATEGORIA: PDF ─── -->
-  <url>
-    <loc>https://narzedziabiurowe.pl/pdf</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/kompresja-pdf</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/generator-faktur.html</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://narzedziabiurowe.pl/pdf-do-word</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/polacz-pdf</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ─── KATEGORIA: FAKTURY ─── -->
-  <url>
-    <loc>https://narzedziabiurowe.pl/faktury</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/generator-faktur</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ─── KATEGORIA: KONWERTERY ─── -->
-  <url>
-    <loc>https://narzedziabiurowe.pl/konwertery</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/przelicznik-walut</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://narzedzia-biurowe.pages.dev/przelicznik-walut.html</loc>
+    <lastmod>2025-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/xlsx-do-csv</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ─── STRONY INFORMACYJNE ─── -->
-  <url>
-    <loc>https://narzedziabiurowe.pl/o-nas</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/polityka-prywatnosci</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://narzedziabiurowe.pl/kontakt</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
 </urlset>
