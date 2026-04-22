@@ -285,23 +285,44 @@ footer p{font-size:13px;color:var(--dim);max-width:300px;line-height:1.6}
 </footer>
 
 <script>
-const CURRENCIES=['PLN','EUR','USD','GBP','CHF','JPY','CAD','AUD','NOK','SEK','DKK','CZK','HUF','RON','BGN','HRK','TRY','CNY','INR','MXN'];
+const CURRENCIES=['PLN','EUR','USD','GBP','CHF','JPY','CAD','AUD','NOK','SEK','DKK','CZK','HUF','RON','BGN','TRY','CNY','INR','MXN','RUB'];
 const POPULAR=[{from:'EUR',to:'PLN'},{from:'USD',to:'PLN'},{from:'GBP',to:'PLN'},{from:'CHF',to:'PLN'},{from:'NOK',to:'PLN'},{from:'CZK',to:'PLN'}];
 let rates={PLN:1};let rateDate='';
 
 async function fetchRates(){
   try{
-    const r=await fetch('https://api.frankfurter.app/latest?base=PLN');
+    // Próba 1: open.er-api.com (działa bez CORS)
+    const r=await fetch('https://open.er-api.com/v6/latest/PLN');
     const d=await r.json();
-    rates={PLN:1,...d.rates};
-    rateDate='Kurs z: '+d.date;
-    populateSelects();
-    convert();
-    renderPopular();
+    if(d&&d.rates){
+      rates={PLN:1,...d.rates};
+      rateDate='Kurs z: '+new Date(d.time_last_update_utc).toLocaleDateString('pl-PL');
+      populateSelects();
+      convert();
+      renderPopular();
+      return;
+    }
+    throw new Error('bad response');
   }catch(e){
-    document.getElementById('error-box').style.display='block';
-    document.getElementById('rates-grid').innerHTML='';
-    populateSelects();
+    try{
+      // Próba 2: exchangerate-api.com
+      const r2=await fetch('https://api.exchangerate-api.com/v4/latest/PLN');
+      const d2=await r2.json();
+      rates={PLN:1,...d2.rates};
+      rateDate='Kurs z: '+d2.date;
+      populateSelects();
+      convert();
+      renderPopular();
+    }catch(e2){
+      // Fallback: kursy wbudowane (przybliżone)
+      rates={PLN:1,EUR:0.232,USD:0.251,GBP:0.197,CHF:0.222,JPY:37.8,CAD:0.347,AUD:0.389,NOK:2.71,SEK:2.63,DKK:1.73,CZK:5.82,HUF:91.2,RON:1.16,TRY:8.62,CNY:1.82,INR:20.9,MXN:4.98};
+      rateDate='Kursy przybliżone (brak połączenia z API)';
+      populateSelects();
+      convert();
+      renderPopular();
+      document.getElementById('error-box').style.display='block';
+      document.getElementById('error-box').textContent='Nie udało się pobrać aktualnych kursów — wyświetlane są kursy przybliżone.';
+    }
   }
 }
 function populateSelects(){
