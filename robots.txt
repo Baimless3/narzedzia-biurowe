@@ -1,0 +1,22 @@
+# ═══════════════════════════════════════════════════════════
+# ROBOTS.TXT — NarzędziaBiurowe.pl
+# ═══════════════════════════════════════════════════════════
+# Ten plik mówi robotom wyszukiwarek co mogą indeksować.
+# Wgraj go do głównego katalogu strony (root):
+#   https://narzedziabiurowe.pl/robots.txt
+# ═══════════════════════════════════════════════════════════
+
+# Wszystkie roboty (Googlebot, Bingbot itd.)
+User-agent: *
+
+# Zezwól na indeksowanie całej strony
+Allow: /
+
+# Nie indeksuj stron admina / technicznych (jeśli masz)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.git/
+Disallow: /tmp/
+
+# Mapa witryny — Google ją tu znajdzie automatycznie
+Sitemap: https://narzedziabiurowe.pl/sitemap.xml
